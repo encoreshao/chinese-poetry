@@ -2,7 +2,10 @@
   "name": "chinese-poetry",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://encoreshao.github.io/chinese-poetry",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -15,6 +18,7 @@
     "@mui/material": "^5.10.0",
     "@mui/styled-engine-sc": "^5.10.0",
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",

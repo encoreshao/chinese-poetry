@@ -111,7 +111,7 @@ export default function HomeApp() {
               >
                 View Source Code
               </Button>
-              <Button variant="outlined" href="https://chinese-pooetry.linktr.cn">Web Site</Button>
+              <Button variant="outlined" href="https://encoreshao.github.io/chinese-poetry/">Web Site</Button>
             </Stack>
           </Container>
         </Box>

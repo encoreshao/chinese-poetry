@@ -1,10 +1,9 @@
-// import HomeApp from './home_app'
-import SwiperApp from './swiper_app'
+import Home from './containers/Home'
 
-const Home = () => {
+const App = () => {
   return (
-    <SwiperApp />
+    <Home />
   )
 }
 
-export default Home
+export default App

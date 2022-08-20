@@ -1,30 +1,16 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import StarIcon from '@mui/icons-material/StarBorder';
-import CssBaseline from '@mui/material/CssBaseline';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { List, ListItem, ListItemText } from '@mui/material';
+import { Container, Box, Button, Stack, Typography } from '@mui/material';
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-cards";
-
-// import required modules
-import { EffectCards } from "swiper";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+// import DataSwiper from './data_swiper';
+import Lists from './lists';
 
 const theme = createTheme({
   palette: {
@@ -51,8 +37,9 @@ const theme = createTheme({
 });
 
 
-export default function HomeApp() {
+export default function Home() {
   const [data, setData] = useState([]);
+  const [menus, setMenus] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,6 +48,7 @@ export default function HomeApp() {
       );
 
       setData(result.data);
+      setMenus(result.data.map((item: any) => item['chapter']))
     };
 
     fetchData();
@@ -68,15 +56,7 @@ export default function HomeApp() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <StarIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            中文诗歌
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
       <main>
         {/* Hero unit */}
         <Box
@@ -117,53 +97,10 @@ export default function HomeApp() {
         </Box>
 
         <Container sx={{ py: 8, bgcolor: 'background.paper' }} maxWidth={'lg'}>
-          {/* End hero unit */}
-
-          <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="mySwiper"
-          >
-            {data.map((result: any) => (
-              <SwiperSlide>
-                {result['chapter']}
-
-                <List dense={true} disablePadding={true} sx={{ maxHeight: 400 }}>
-                  {result['paragraphs'].map((text: any) => (
-                    <ListItem key={text}>
-                      <ListItemText primary={text} />
-                    </ListItem>
-                  ))}
-                </List>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <Lists data={data} menus={menus} />
         </Container>
       </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" color='primary'>
-          中文诗歌
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          数据来源于互联网!
-        </Typography>
-        <Typography variant="body2" color="text.secondary" align="center">
-          {'Copyright © '}
-          <Link color="inherit" href="https://icmoc.com/">
-            icmoc.com
-          </Link>{' '}
-          {new Date().getFullYear()}
-          {'.'}
-        </Typography>
-      </Box>
-      {/* End footer */}
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -9,14 +9,14 @@ import { Container, Box, Button, Stack, Typography } from '@mui/material';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-// import DataSwiper from './data_swiper';
+import DataSwiper from './data_swiper';
 import Lists from './lists';
 
 const theme = createTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: '#254f1a',
+      main: '#065279',
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
@@ -98,6 +98,7 @@ export default function Home() {
 
         <Container sx={{ py: 8, bgcolor: 'background.paper' }} maxWidth={'lg'}>
           <Lists data={data} menus={menus} />
+          {/* <DataSwiper data={data} menus={menus} /> */}
         </Container>
       </main>
       <Footer />

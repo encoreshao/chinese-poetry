@@ -12,8 +12,8 @@ import "swiper/css/effect-cards";
 import { EffectCards } from "swiper";
 
 
-export default function DataSwiper(props: { data: any }) {
-  const { data } = props
+export default function DataSwiper(props: { data: any, menus: any }) {
+  const { data, menus } = props
 
   return (
     <Swiper

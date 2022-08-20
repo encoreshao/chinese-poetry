@@ -19,7 +19,7 @@ export default function Lists(props: { data: any, menus: any }) {
         id="top"
         sx={{ p: 2, mb: 2 }}
       >
-        {menus.map((menu: any) => (
+        {menus && menus.map((menu: any) => (
           <Link
             key={"link-" + menu}
             href={"#" + menu}
@@ -34,7 +34,7 @@ export default function Lists(props: { data: any, menus: any }) {
       </Card>
 
       <Grid>
-        {data.map((result: any) => (
+        {data && data.map((result: any) => (
           <Grid item key={result['chapter']} xs={6} sm={6} md={4}>
             <Card
               sx={{ height: '100%', display: 'flex', flexDirection: 'column', mb: 2 }}

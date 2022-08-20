@@ -22,7 +22,7 @@ export default function DataSwiper(props: { data: any, menus: any }) {
       modules={[EffectCards]}
       className="mySwiper"
     >
-      {data.map((result: any) => (
+      {data && menus && data.map((result: any) => (
         <SwiperSlide>
           {result['chapter']}
 

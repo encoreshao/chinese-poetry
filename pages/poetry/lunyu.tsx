@@ -6,10 +6,13 @@ import MenuIcon from '@mui/icons-material/MenuBookOutlined';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
-import { CardContent, CardActions, List, ListItem, ListItemText } from '@mui/material';
-
-export default function Lists(props: { data: any, menus: any }) {
+export default function Lunyu(props: { data: any, menus: any }) {
   const { data, menus } = props
 
   return (
@@ -33,8 +36,8 @@ export default function Lists(props: { data: any, menus: any }) {
       </Card>
 
       <Grid>
-        {data && data.map((result: any) => (
-          <Grid item key={result['chapter']} xs={6} sm={6} md={4}>
+        {data && data.map((result: any, index: number) => (
+          <Grid item key={`${result['chapter']}-${index}`} xs={6} sm={6} md={4}>
             <Card
               sx={{ height: '100%', display: 'flex', flexDirection: 'column', mb: 2 }}
             >
@@ -47,8 +50,8 @@ export default function Lists(props: { data: any, menus: any }) {
               </CardContent>
               <CardActions>
                 <List dense={true} disablePadding={true}>
-                  {result['paragraphs'].map((text: any) => (
-                    <ListItem key={text}>
+                  {result['paragraphs'].map((text: any, zindex: number) => (
+                    <ListItem key={`${text}-${zindex}`}>
                       <ListItemText primary={text} />
                     </ListItem>
                   ))}

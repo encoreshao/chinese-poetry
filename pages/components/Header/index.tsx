@@ -1,20 +1,34 @@
-import AppBar from '@mui/material/AppBar';
+/* eslint-disable jsx-a11y/alt-text */
+import { AppBar, Toolbar, Typography, Stack } from '@mui/material';
 
-import Toolbar from '@mui/material/Toolbar';
-import StarIcon from '@mui/icons-material/StarBorder';
-import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
   return (
     <>
-      <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="fixed">
         <Toolbar>
-          <StarIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            中文诗歌
+          <Image
+            src="https://avatars5.githubusercontent.com/u/30764933?s=50&v=4"
+            width={25}
+            height={25}
+          />
+
+          <Typography sx={{ pl: 2 }} variant="h6" color="inherit" noWrap>
+            <Link href='/'>中文诗歌</Link>
           </Typography>
+
+          <hr />
+          <Stack
+            sx={{ pl: 1 }}
+            direction="row"
+            justifyContent="center"
+          >
+            <Link href={{ pathname: '/poetry' }}>
+              诗经
+            </Link>
+          </Stack>
         </Toolbar>
       </AppBar>
     </>

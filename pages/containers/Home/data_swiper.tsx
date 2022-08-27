@@ -11,7 +11,6 @@ import "swiper/css/effect-cards";
 // import required modules
 import { EffectCards } from "swiper";
 
-
 export default function DataSwiper(props: { data: any, menus: any }) {
   const { data, menus } = props
 
@@ -27,8 +26,8 @@ export default function DataSwiper(props: { data: any, menus: any }) {
           {result['chapter']}
 
           <List dense={true} disablePadding={true} sx={{ maxHeight: 400 }}>
-            {result['paragraphs'].map((text: any) => (
-              <ListItem key={text}>
+            {result['paragraphs'].map((text: any, index: number) => (
+              <ListItem key={`${text}-${index}`}>
                 <ListItemText primary={text} />
               </ListItem>
             ))}

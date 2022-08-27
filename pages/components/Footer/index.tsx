@@ -1,32 +1,56 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react-hooks/exhaustive-deps */
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import Link from 'next/link'
+
+import { Box, Typography, Button, Stack } from '@mui/material';
+
+import { Categories } from './../../utils/constants';
+import Copyright from './../../src/Copyright';
 
 export default function Footer() {
-
   return (
     <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-      <Typography variant="h6" align="center" color='primary'>
+      <Typography
+        sx={{ color: 'text.primary' }}
+        variant="h6"
+        align="center"
+        color='primary'
+      >
         中文诗歌
       </Typography>
+
+      <hr />
+      <Stack
+        sx={{ pl: 1 }}
+        direction="row"
+        justifyContent="center"
+      >
+        { Categories.map((category: string) => (
+          <Button
+            sx={{ color: 'text.primary' }}
+            key={category}
+          >
+            <Link href={{
+              pathname: '/poetry/[categoryName]',
+              query: { categoryName: category }
+            }}>
+              {category}
+            </Link>
+          </Button>
+        ))}
+      </Stack>
+
+      <hr />
       <Typography
         variant="subtitle1"
         align="center"
         color="text.secondary"
         component="p"
       >
-        数据来源于互联网!
+        数据来源于互联网
       </Typography>
-      <Typography variant="body2" color="text.secondary" align="center">
-        {'Copyright © '}
-        <Link color="inherit" href="https://icmoc.com/">
-          icmoc.com
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
+
+      <Copyright />
     </Box>
   );
 }

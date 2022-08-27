@@ -9,7 +9,7 @@ import axios from 'axios';
 import { remoteDataUrl } from './../utils';
 import { CategorySets } from './../utils/constants';
 
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 import Shijing from './shijing';
 import Yuanqu from './yuanqu';
@@ -30,16 +30,16 @@ const PoetryDetail = () => {
   const router = useRouter()
   const categoryName = router.query.categoryName
 
-  if (!categoryName) {
-    return
-  }
+  if (!categoryName || typeof categoryName !== 'string') { return }
 
   const [data, setData] = useState([])
   const [menus, setMenus] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const identifier = categoryName && CategorySets[categoryName]['identifier']
-  const uri = categoryName && CategorySets[categoryName]['uri']
+  const identifier = CategorySets[categoryName] && CategorySets[categoryName]['identifier']
+  const uri = CategorySets[categoryName] && CategorySets[categoryName]['uri']
+
+  if (!identifier) { return }
 
   useEffect(() => {
     const fetchData = async () => {

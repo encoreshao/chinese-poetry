@@ -1,12 +1,3 @@
-export interface CategorySetsConfig {
-  [category: string]: {
-    name: string;
-    uri: string;
-    img?: string;
-    identifier?: string;
-  };
-}
-
 export const Categories = [
   "花间集",
   "南唐二主词",
@@ -24,7 +15,12 @@ export const Categories = [
   "纳兰性德诗集"
 ]
 
-export const CategorySets: CategorySetsConfig = {
+export const CategorySets: Record<string, {
+  name: string;
+  uri: string;
+  img?: string;
+  identifier?: string;
+}> = {
   "花间集": {
     name: "花间集",
     uri: "wudai/huajianji/huajianji-1-juan.json",

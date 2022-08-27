@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { remoteDataUrl } from './../utils';
-import { CategorySets } from './../utils/constants';
+import { CategorySets } from '../utils/Constants';
 
 import { Container, Typography } from '@mui/material';
 

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import Hero from './containers/Hero';
 import { imageUrl } from './utils';
-import { Categories, CategorySets } from './utils/constants';
+import { Categories, CategorySets } from './utils/Constants';
 
 export default function App() {
   const ImageBackdrop = styled('div')(({ theme }) => ({

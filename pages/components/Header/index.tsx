@@ -15,19 +15,28 @@ export default function Header() {
             height={25}
           />
 
-          <Typography sx={{ pl: 2 }} variant="h6" color="inherit" noWrap>
+          <Typography sx={{ ml: 2 }} variant="h6" color="inherit" noWrap>
             <Link href='/'>中文诗歌</Link>
           </Typography>
 
           <hr />
           <Stack
-            sx={{ pl: 1 }}
+            sx={{ mr: 2 }}
             direction="row"
             justifyContent="center"
           >
-            <Link href={{ pathname: '/poetry' }}>
-              诗经
-            </Link>
+            <Typography sx={{ pl: 2 }} variant="h6" color="inherit" noWrap>
+              <Link
+                href={{ pathname: '/poetry' }}
+              >
+                诗经 - V1
+              </Link>
+            </Typography>
+            <Typography sx={{ pl: 2 }} variant="h6" color="inherit" noWrap>
+              <Link href={{ pathname: '/poetry/swiper' }}>
+                诗经 - V2
+              </Link>
+            </Typography>
           </Stack>
         </Toolbar>
       </AppBar>

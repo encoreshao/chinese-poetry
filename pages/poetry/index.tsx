@@ -9,7 +9,7 @@ const Poetry = () => {
       <Head>
         <title>中文诗歌 - 诗歌列表 - Encore Shao</title>
       </Head>
-      <Home />
+      <Home category='lists'/>
     </Container>
   )
 }

@@ -7,12 +7,15 @@ import axios from 'axios';
 
 import { Container } from '@mui/material';
 
+import DataLists from './data_lists';
 import DataSwiper from './data_swiper';
 import Hero from './../Hero';
 import Loading from './../../components/loading';
 import { remoteDataUrl } from './../../utils';
 
-export default function Home() {
+export default function Home(props: { category: string }) {
+  const { category } = props;
+
   const [data, setData] = useState([]);
   const [menus, setMenus] = useState([]);
   const [loading, setLoading] = useState(true)
@@ -36,8 +39,8 @@ export default function Home() {
       <main>
         <Hero />
         <Container sx={{ py: 8, bgcolor: 'background.paper' }} maxWidth={'xl'}>
-          {/* <Lists data={data} menus={menus} /> */}
-          <DataSwiper data={data} menus={menus} />
+          { category == 'lists' && <DataLists data={data} menus={menus} /> }
+          { category == 'swiper' && <DataSwiper data={data} menus={menus} /> }
         </Container>
       </main>
     </>

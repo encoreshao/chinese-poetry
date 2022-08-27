@@ -78,7 +78,7 @@ export default function App() {
     { width: '100%' },
   ];
 
-  const imageURLs = imageItems.map((_, index) => {
+  const imageURLs: { [index: number]: any } = imageItems.map((_, index) => {
     return Categories[index] && CategorySets[Categories[index]]['img']
   });
 

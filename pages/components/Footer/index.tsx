@@ -47,7 +47,7 @@ export default function Footer() {
         color="text.secondary"
         component="p"
       >
-        数据来源于互联网
+        此页面由 MUI + Next.js + TypeScript 构建
       </Typography>
 
       <Copyright />

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { Box, Typography, Button, Stack } from '@mui/material';
 
-import { Categories } from '../../utils/Constants';
+import { Categories } from '../../../utils/Constants';
 import Copyright from './../../src/Copyright';
 
 export default function Footer() {

@@ -1,4 +1,4 @@
-const Categories = [
+export const Categories = [
   "花间集",
   "南唐二主词",
   "唐诗三百首",
@@ -15,7 +15,7 @@ const Categories = [
   "纳兰性德诗集"
 ]
 
-const CategorySets: Record<string, {
+export const CategorySets: Record<string, {
   name: string;
   uri: string;
   img?: string;
@@ -107,7 +107,7 @@ const CategorySets: Record<string, {
   }
 }
 
-const ImageSets = [
+export const ImageSets = [
   '1513781050488-6dd358209a1b',
   '1510423579098-f47bf52b6764',
   '1530569112985-108dc2578ec2',
@@ -125,5 +125,3 @@ const ImageSets = [
   '1557228682-25dd18e9053d',
   '1553125677-d83517b3b4af',
 ]
-
-export { Categories, CategorySets, ImageSets }

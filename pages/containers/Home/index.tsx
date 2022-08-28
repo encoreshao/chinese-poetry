@@ -11,7 +11,7 @@ import DataLists from './data_lists';
 import DataSwiper from './data_swiper';
 import Hero from './../Hero';
 import Loading from './../../components/loading';
-import { remoteDataUrl } from './../../utils';
+import { remoteDataUrl } from './../../../utils';
 
 export default function Home(props: { category: string }) {
   const { category } = props;

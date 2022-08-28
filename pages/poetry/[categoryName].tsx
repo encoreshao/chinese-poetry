@@ -6,8 +6,8 @@ import Head from 'next/head'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { remoteDataUrl } from './../utils';
-import { CategorySets } from '../utils/Constants';
+import { remoteDataUrl } from './../../utils';
+import { CategorySets } from './../../utils/Constants';
 
 import { Container, Typography } from '@mui/material';
 

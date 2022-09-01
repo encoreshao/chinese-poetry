@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import '../styles/swiper.scss'
+import '../styles/loading.scss'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';

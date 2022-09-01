@@ -27,6 +27,13 @@ export default function Header() {
           >
             <Typography sx={{ pl: 2 }} variant="h6" color="inherit" noWrap>
               <Link
+                href={{ pathname: '/about' }}
+              >
+                关于我
+              </Link>
+            </Typography>
+            <Typography sx={{ pl: 2 }} variant="h6" color="inherit" noWrap>
+              <Link
                 href={{ pathname: '/poetry' }}
               >
                 诗经 - V1

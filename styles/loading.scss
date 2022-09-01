@@ -1,0 +1,57 @@
+#about-container {
+  display: flex;
+  width: 80%;
+  margin-top: 10vh;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background: whitesmoke;
+  animation: change-background 2s linear infinite;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+@keyframes change-background {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.loading {
+  z-index: -1;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(to top, whitesmoke 40%, #065279);
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+  top: 10vh;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading::before {
+  content: '';
+  position: absolute;
+  background: whitesmoke;
+  inset: 20px 20px 0 0;
+  border-radius: 50%;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #065279;
+  border-radius: 50%;
+  top: 50px;
+  right: -8px;
+  box-shadow: 0 0 5px #065279,
+  0 0 25px #065279,
+  0 0 50px #065279,
+  0 0 75px #065279;
+}

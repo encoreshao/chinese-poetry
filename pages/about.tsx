@@ -3,13 +3,7 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import { List, ListItem, Typography, ListItemText } from '@mui/material';
 
-const customTypography = (name: string, text: string) => {
-  return <Typography variant={name} component={name}>
-    {text}
-  </Typography>
-}
-
-export default function Abount() {
+export default function About() {
   return (
     <Container
       sx={{ mt: 8, mb: 4 }}
@@ -28,32 +22,56 @@ export default function Abount() {
         <List dense={true} disablePadding={true} sx={{ pt: 10, mt: 8 }}>
           <ListItem>
             <ListItemText
-              primary={customTypography('h3', 'Encore Shao')}
+              primary={
+                <Typography variant='h3' component='h3'>
+                  Encore Shao
+                </Typography>
+              }
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary={customTypography('i', 'Staff Software Engineer At Ekohe')}
+              primary={
+                <Typography variant='h4' component='h3'>
+                  Staff Software Engineer At Ekohe
+                </Typography>
+              }
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary={customTypography('h5', '🤔   Exploring new technologies and developing software solutions and quick hacks.')}
+              primary={
+                <Typography variant='h5' component='h5'>
+                  🤔   Exploring new technologies and developing software solutions and quick hacks.
+                </Typography>
+              }
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary={customTypography('h5', '🎓   Lead Software Engineer at Ekohe and coding stuffs.')}
+              primary={
+                <Typography variant='h5' component='h5'>
+                  🎓   Lead Software Engineer at Ekohe and coding stuffs.
+                </Typography>
+              }
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary={customTypography('h5', '🌱   Learning about Cloud Tech, Systems Design.')}
+              primary={
+                <Typography variant='h5' component='h5'>
+                  🌱   Learning about Cloud Tech, Systems Design.
+                </Typography>
+              }
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary={customTypography('h5', '✍️   Pursuing Web Development and Open Source as hobbies.')}
+              primary={
+                <Typography variant='h5' component='h5'>
+                  ✍️   Pursuing Web Development and Open Source as hobbies.
+                </Typography>
+              }
             />
           </ListItem>
         </List>

@@ -20,6 +20,7 @@ export default function App() {
     bottom: 0,
     background: '#000',
     opacity: 0.5,
+    boxShadow: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px',
     transition: theme.transitions.create('opacity'),
   }));
 

@@ -29,11 +29,11 @@ export default function About() {
               }
             />
           </ListItem>
-          <ListItem>
+          <ListItem sx={{ pb: 3 }}>
             <ListItemText
               primary={
-                <Typography variant='h4' component='h3'>
-                  Staff Software Engineer At Ekohe
+                <Typography variant='subtitle1' component='strong'>
+                  Principal Software Engineer At Ekohe
                 </Typography>
               }
             />
@@ -41,7 +41,7 @@ export default function About() {
           <ListItem>
             <ListItemText
               primary={
-                <Typography variant='h5' component='h5'>
+                <Typography variant='inherit' component='p'>
                   🤔   Exploring new technologies and developing software solutions and quick hacks.
                 </Typography>
               }
@@ -50,8 +50,8 @@ export default function About() {
           <ListItem>
             <ListItemText
               primary={
-                <Typography variant='h5' component='h5'>
-                  🎓   Lead Software Engineer at Ekohe and coding stuffs.
+                <Typography variant='inherit' component='p'>
+                  🎓   Lead Software Engineer and Coding stuffs.
                 </Typography>
               }
             />
@@ -59,7 +59,7 @@ export default function About() {
           <ListItem>
             <ListItemText
               primary={
-                <Typography variant='h5' component='h5'>
+                <Typography variant='inherit' component='p'>
                   🌱   Learning about Cloud Tech, Systems Design.
                 </Typography>
               }
@@ -68,7 +68,7 @@ export default function About() {
           <ListItem>
             <ListItemText
               primary={
-                <Typography variant='h5' component='h5'>
+                <Typography variant='inherit' component='p'>
                   ✍️   Pursuing Web Development and Open Source as hobbies.
                 </Typography>
               }
